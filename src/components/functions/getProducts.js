@@ -17,7 +17,7 @@ async function getProducts(retriverFunc, tags, price, name) {
     queryArray.forEach((param, index) => {
         query += index === 0 ? param : `&${param}`;
     })
-    let response = await fetch(`http://localhost:3030/api/products?${query}`);
+    let response = await fetch( `${process.env.REACT_APP_FETCH_URL}/api/products?${query}`);
     let data;
     if( !response.ok || !response.status === 200){
         data = {result: {products:[]}};
