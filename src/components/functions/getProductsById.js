@@ -2,7 +2,7 @@ async function getProductsById(retriverFunc, ids) {
     let data;
     data = await Promise.all(
         ids.map( async id => {
-            let response = await fetch(`${process.env.REACT_APP_FETCH_URL}/api/products?id=${id}`);
+            let response = await fetch(`/api/products?id=${id}`);
 
             if( !response.ok || !response.status === 200){
                 return {result: {products:[]}};
