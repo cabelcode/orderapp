@@ -43,7 +43,6 @@ const Menu = ({page, setPage, setOrder}) => {
                 setPage={setPage} 
                 setSingleId={setSingleId}
             />
-            {console.log(page)}
             <ProductSingle 
                 data={productList.find( product => product.id === singleId ? product : false ) } 
                 page={page} 
